@@ -9,4 +9,10 @@ storage_account_list=[{
     rg_name="SampleResourceGroup1"
     location="eastus"
     account_tier="Standard"
+},
+{
+    sa_name="automatedstorageaccount2"
+    rg_name="SampleResourceGroup1"
+    location="centralus"
+    account_tier="Standard"
 }]
