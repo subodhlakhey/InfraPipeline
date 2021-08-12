@@ -22,11 +22,12 @@ provider "azurerm" {
 }
 
 module "ResourceGroups" {
-  source            = "C:/Users/Subod/Desktop/Xoriant_Code/Github/InfraPipeline/modules/ResourceGroup"
+  source            = "./modules/ResourceGroup"
   resource_grp_list = var.resource_group_list
 }
+//C:/Users/Subod/Desktop/Xoriant_Code/Github/InfraPipeline
 
 module "StorageAccount" {
-  source           = "C:/Users/Subod/Desktop/Xoriant_Code/Github/InfraPipeline/modules/StorageAccount"
+  source           = "./modules/StorageAccount"
   storage_acc_list = var.storage_account_list
 }
