@@ -4,9 +4,9 @@
 }]
 */
 
-storage_account_list=[
+storage_account_list=[{
     sa_name="AutomatedStorageAccount1"
     rg_name="SampleResourceGroup1"
     location="eastus"
     account_tier="Standard"
-]
+}]
