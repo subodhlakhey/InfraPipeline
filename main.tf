@@ -7,7 +7,7 @@ terraform {
     storage_account_name = "xortfstate01"
     container_name       = "defaultrg"
     key                  = "dev.tfstate"
-    access_key           = var.tf_state_access_key
+    access_key           = "LPs2BPXpBxTekaOU/yQwGEMIlBjJA4vYIxekA2iJFLdTmmaHCxWVzKgsgb3uEeTXh/tmTiu9KQueZmzygvpx3Q=="
   }
 }
 
