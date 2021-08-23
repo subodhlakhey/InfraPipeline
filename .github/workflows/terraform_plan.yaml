@@ -11,11 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout Infra Pipeline
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1.3.2
       with:
         terraform_version: 1.0.4
+        path: main
       
+    - name: Checkout Core TF modules
+      uses: actions/checkout@v2
+      with:
+        repository: subodhlakhey/TerraformCore
+        token: ${{ secrets.PAT }}
+        path: core-modules
+
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -recursive
@@ -31,3 +40,9 @@ jobs:
     - name: Terraform Plan
       id: plan
       run: terraform plan -var 'client_secret=${{ secrets.CLIENT_SECRET }}'
+
+    - name: Get Details
+      id: detail
+      run: |
+        cd core-modules
+        ls -lrt
