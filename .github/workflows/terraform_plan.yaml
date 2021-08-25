@@ -32,11 +32,14 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init -no-color
+      working-directory: InfraPipeline
 
     - name: Terraform Validate
       id: validate
       run: terraform validate -no-color
+      working-directory: InfraPipeline
 
     - name: Terraform Plan
       id: plan
       run: terraform plan -var 'client_secret=${{ secrets.CLIENT_SECRET }}'
+      working-directory: InfraPipeline
