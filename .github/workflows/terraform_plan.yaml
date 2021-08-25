@@ -12,6 +12,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+      with:
+        path: InfraPipeline
     - uses: hashicorp/setup-terraform@v1.3.2
       with:
         terraform_version: 1.0.4
@@ -21,6 +23,7 @@ jobs:
       with:
         repository: subodhlakhey/TerraformCore
         token: ${{ secrets.PAT }}
+        path: TerraformCore
 
     - name: Terraform fmt
       id: fmt
