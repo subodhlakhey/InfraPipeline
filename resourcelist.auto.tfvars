@@ -5,7 +5,7 @@
 */
 
 storage_account_list=[{
-    sa_name="automatedstorageaccount1"
+    sa_name="automatedstorageaccount001"
     rg_name="SampleResourceGroup1"
     location="eastus"
     account_tier="Standard"
