@@ -16,6 +16,12 @@ jobs:
       with:
         terraform_version: 1.0.4
 
+    - name: Checkout Core TF modules
+      uses: actions/checkout@v2
+      with:
+        repository: subodhlakhey/TerraformCore
+        token: ${{ secrets.PAT }}
+
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -recursive
