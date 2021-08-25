@@ -4,12 +4,12 @@
 }]
 */
 
-storage_account_list=[{
+storage_account_list=[/*{
     sa_name="automatestrgacct001"
     rg_name="SampleResourceGroup1"
     location="eastus"
     account_tier="Standard"
-}/*,
+},
 {
     sa_name="automatedstorageaccount2"
     rg_name="SampleResourceGroup1"
