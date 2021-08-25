@@ -40,9 +40,3 @@ jobs:
     - name: Terraform Plan
       id: plan
       run: terraform plan -var 'client_secret=${{ secrets.CLIENT_SECRET }}'
-
-    - name: Get Details
-      id: detail
-      run: |
-        cd core-modules
-        ls -lrt
