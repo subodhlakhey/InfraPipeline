@@ -23,7 +23,7 @@ fileshare = {
   account_kind             = "FileStorage"
   delete_retention_policy  = 90
 }
-/*
+
 Keyvault = {
   name                            = "xor-dev-keyvault-poc"
   enabled_for_deployment          = true
@@ -36,4 +36,3 @@ Keyvault = {
   resource_grp_name               = "SampleResourceGroup1"
   location                        = "eastus"
 }
-*/
