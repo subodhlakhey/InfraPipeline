@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Infra Code
+      uses: actions/checkout@v2
       with:
-        path: InfraPipeline
+        path: Infra
     - uses: hashicorp/setup-terraform@v1.3.2
       with:
         terraform_version: 1.0.4
@@ -28,6 +29,7 @@ jobs:
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -recursive
+      working-directory: InfraPipeline
 
     - name: Terraform Init
       id: init
