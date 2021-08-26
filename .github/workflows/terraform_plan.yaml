@@ -56,6 +56,8 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           username: lakheysubodh@gmail.com
+          secure: true
+          ignore_cert: true
           password: ${{ secrets.GMAIL_PASS }}
           subject: New Commit in ${{ github.repository }}.Please Review
           body: ${{ github.actor }} has committed a code and is ready for review Repo ${{ github.repository }}
