@@ -8,19 +8,32 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Infra Code
+      uses: actions/checkout@v2
+      with:
+        path: Infra
     - uses: hashicorp/setup-terraform@v1.3.2
       with:
         terraform_version: 1.0.4
-      
+
+    - name: Checkout Core TF modules
+      uses: actions/checkout@v2
+      with:
+        repository: subodhlakhey/TerraformCore
+        token: ${{ secrets.PAT }}
+        path: TerraformCore
+
     - name: Terraform Init
       id: init
       run: terraform init -no-color
+      working-directory: ./Infra
 
     - name: Terraform Validate
       id: validate
       run: terraform validate -no-color
+      working-directory: ./Infra
 
     - name: Terraform Apply
       id: apply
-      run: terraform apply -auto-approve -var 'client_secret=${{ secrets.CLIENT_SECRET }}'
+      run: terraform apply -auto-approve -var 'client_secret=${{ secrets.CLIENT_SECRET }}' -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}'
+      working-directory: ./Infra
