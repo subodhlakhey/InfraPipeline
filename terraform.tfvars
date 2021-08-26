@@ -7,11 +7,11 @@ deployment_tags = {
   region           = "eastus"
   Compliance       = "Not_Applicable"
   DRProtected      = "No"
-  Creator          = "SLakhey@xoriant.com"
-  CloudOwner       = "arizvi@xoriant.com"
+  Creator          = "SLakhey@xyz.com"
+  CloudOwner       = "arizvi@xyz.com"
   ApplicationName  = "LIBAV"
-  BusinessOwner    = "sshankaran@xoriant.com"
-  ApplicationOwner = "pchawla@xoriant.com"
+  BusinessOwner    = "sshankaran@xyz.com"
+  ApplicationOwner = "pchawla@xyz.com"
 }
 
 fileshare = {
@@ -21,9 +21,8 @@ fileshare = {
   account_tier             = "premium"
   account_replication_type = "LRS"
   account_kind             = "FileStorage"
-  delete_retention_policy  = 90
 }
-
+/*
 Keyvault = {
   name                            = "xor-dev-keyvault-poc"
   enabled_for_deployment          = true
@@ -35,4 +34,4 @@ Keyvault = {
   purge_protection_enabled        = false
   resource_grp_name               = "SampleResourceGroup1"
   location                        = "eastus"
-}
+}*/

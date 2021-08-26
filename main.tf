@@ -1,4 +1,14 @@
-// Resource Group
+module "fileshare" {
+  source                   = "../TerraformCore/modules/terraform-azurerm-storageaccount"
+  resource_group_name      = var.fileshare.resource_grp_name //module.resource_group.resource_group.common.name
+  location                 = var.fileshare.location          //module.resource_group.resource_group.common.location
+  name                     = var.fileshare.name
+  account_tier             = var.fileshare.account_tier
+  account_replication_type = var.fileshare.account_replication_type
+  account_kind             = var.fileshare.account_kind
+  resource_tags            = var.resource_tags
+  deployment_tags          = var.deployment_tags
+}
 
 module "keyvault" {
   source = "../TerraformCore/modules/terraform-azurerm-keyvault"
@@ -17,19 +27,6 @@ module "keyvault" {
 
   resource_tags   = var.resource_tags
   deployment_tags = var.deployment_tags
-}
-
-
-module "fileshare" {
-  source                   = "../TerraformCore/modules/terraform-azurerm-storageaccount"
-  resource_group_name      = var.fileshare.resource_grp_name //module.resource_group.resource_group.common.name
-  location                 = var.fileshare.location          //module.resource_group.resource_group.common.location
-  name                     = var.fileshare.name
-  account_tier             = var.fileshare.account_tier
-  account_replication_type = var.fileshare.account_replication_type
-  account_kind             = var.fileshare.account_kind
-  resource_tags            = var.resource_tags
-  deployment_tags          = var.deployment_tags
 }
 
 /*
