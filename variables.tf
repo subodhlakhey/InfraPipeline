@@ -15,6 +15,12 @@ variable "client_secret" {
   type    = string
   default = ""
 }
+
+variable "subscription_id" {
+  type    = string
+  default = ""
+}
+
 //**********************************************************************************************
 ######################## KeyVault#####################
 
