@@ -9,7 +9,7 @@ module "fileshare" {
   resource_tags            = var.resource_tags
   deployment_tags          = var.deployment_tags
 }
-
+/*
 module "keyvault" {
   source = "../TerraformCore/modules/terraform-azurerm-keyvault"
 
@@ -28,7 +28,7 @@ module "keyvault" {
   resource_tags   = var.resource_tags
   deployment_tags = var.deployment_tags
 }
-
+*/
 /*
 
 module "resource_group" {
