@@ -45,21 +45,3 @@ jobs:
       id: plan
       run: terraform plan -var 'client_secret=${{ secrets.CLIENT_SECRET }}' -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}'
       working-directory: ./Infra
-  
-  Send-Email:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Send email
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: lakheysubodh@gmail.com
-          secure: true
-          ignore_cert: true
-          password: ${{ secrets.GMAIL_PASS }}
-          subject: New Commit in ${{ github.repository }}.Please Review
-          body: ${{ github.actor }} has committed a code and is ready for review Repo ${{ github.repository }}
-          to: lakheysub@yahoo.co.in
-          from: lakheysubodh@gmail.com
