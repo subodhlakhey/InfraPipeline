@@ -1,5 +1,5 @@
 // Resource Group
-
+/*
 module "keyvault" {
   source = "../TerraformCore/modules/terraform-azurerm-keyvault"
 
@@ -18,7 +18,7 @@ module "keyvault" {
   resource_tags   = var.resource_tags
   deployment_tags = var.deployment_tags
 }
-
+*/
 
 module "fileshare" {
   source                   = "../TerraformCore/modules/terraform-azurerm-storageaccount"
